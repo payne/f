@@ -1,0 +1,23 @@
+<!doctype html>
+  <html lang="en">
+<head>
+  <script src="jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.2.0/fabric.min.js"></script>
+</head>
+<body>
+
+<canvas id="c" width="2000" height="2000"></canvas>
+<script> var canvas = new fabric.Canvas('c')
+//rectangle code
+var rect = new fabric.Rect({
+  left: 100,
+  top:150,
+  fill: 'red',
+  width: 30,
+  height: 40
+})
+canvas.add(rect)
+
+</script>
+</body>
+</html>
