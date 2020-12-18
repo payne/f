@@ -1,0 +1,57 @@
+<!doctype html>
+  <html lang="en">
+<head>
+  <script src="jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.2.0/fabric.min.js"></script>
+</head>
+<body>
+<button class="newMachine">Click Here For New Machine</button>
+<canvas id="c" width="2000" height="2000"></canvas>
+<script> var canvas = new fabric.Canvas('c')
+//rectangle code
+var rect = new fabric.Rect({
+  left: 100,
+  top:150,
+  fill: 'red',
+  width: 30,
+  height: 40
+})
+canvas.add(rect)
+//////////////////////////////////////////////////////////
+//machine code, it starts out large and then you can resize it
+new fabric.Image.fromURL('https://cdn0.iconfinder.com/data/icons/engineering-cool-vector-2/128/75-512.png',
+function(myImg){
+  var img1 = myImg.set({ left: 200, top: 200 ,width:600,height:600});
+   canvas.add(img1);
+  });
+/////////////////////////////////////////////////////////////////////
+//inputing text only///////////////////////////////
+var text = canvas.add(new fabric.Text('I love fabricjs', {
+    left: 100, //Take the block's position
+    top: 100,
+    fill: 'black'
+}));
+////////////////////////////////////////////////
+//moving text and objects //////////////////////////////////
+var circle = new fabric.Circle({
+  radius: 100,
+  fill: '#eef',
+  scaleY: 0.5,
+  originX: 'center',
+  originY: 'center'
+});
+var text = new fabric.Text('hello world', {
+  fontSize: 30,
+  originX: 'center',
+  originY: 'center'
+});
+var group = new fabric.Group([ circle, text ], {
+  left: 150,
+  top: 100,
+  angle: -10
+});
+//////////////////////////////////////
+canvas.add(group);
+</script>
+</body>
+</html>
